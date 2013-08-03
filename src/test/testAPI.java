@@ -43,6 +43,7 @@ public class testAPI {
 					rules.add(1);
 					rules.add(2);
 					rules.add(3);		
+					rules.add(4);
 					returnLinks(sentence, temporalExpression, medicalConcept, rules);
 		}
 }
