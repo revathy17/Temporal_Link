@@ -17,8 +17,7 @@ public class testAPI {
 		
 		public static void returnLinks(String sentence, List<String> temporalExpression, List<String> medicalConcept, List<Integer> rules) {
 				
-					LexicalizedParser parser = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishRNN.ser.gz");
-					
+					LexicalizedParser parser = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishRNN.ser.gz");					
 					try {
 							ApplyRules ar = new ApplyRules(sentence, parser);							
 							List<Link> links = ar.returnAssociationLinks(temporalExpression, medicalConcept,rules);					
@@ -31,6 +30,7 @@ public class testAPI {
 		}	
 				
 		public static void main(String[] args) {
+					
 					String sentence = "Gangrene of left second toe in 2010-06-06 followed by an amputation";
 					List<String> medicalConcept = new ArrayList<String>();
 					medicalConcept.add("Gangrene");
@@ -45,5 +45,6 @@ public class testAPI {
 					rules.add(3);		
 					rules.add(4);
 					returnLinks(sentence, temporalExpression, medicalConcept, rules);
+					
 		}
 }
